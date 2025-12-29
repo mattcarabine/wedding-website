@@ -1,0 +1,104 @@
+/* Viewport-specific styles for full-screen viewer */
+.viewer-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  width: 100dvw;
+  height: 100dvh;
+  z-index: 9999;
+  background-color: #000;
+  touch-action: none;
+  overflow: hidden;
+}
+
+.viewer-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 72px;
+  z-index: 20;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+}
+
+.viewer-content {
+  position: absolute;
+  top: 72px;
+  left: 0;
+  right: 0;
+  bottom: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.viewer-footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
+  z-index: 20;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.viewer-footer-mobile {
+  height: 48px;
+}
+
+.viewer-image-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.viewer-image {
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain;
+}
+
+/* Mobile-specific adjustments */
+@media (max-width: 768px) {
+  .viewer-content {
+    bottom: 48px;
+  }
+
+  .viewer-image {
+    max-width: 95%;
+    max-height: 85%;
+  }
+}
+
+/* Landscape orientation on mobile */
+@media (max-width: 768px) and (orientation: landscape) {
+  .viewer-header {
+    height: 48px;
+  }
+
+  .viewer-content {
+    top: 48px;
+    bottom: 40px;
+  }
+
+  .viewer-footer-mobile {
+    height: 40px;
+  }
+
+  .viewer-image {
+    max-width: 85%;
+    max-height: 80%;
+  }
+}
